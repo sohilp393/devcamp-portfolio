@@ -2,12 +2,14 @@ class PortfoliosController < ApplicationController
   before_action :set_portfolio_item,only: [:edit,:update,:show,:destroy ]
 
   def index
-    binding.pry
     @portfolio_items = Portfolio.all
   end
 
+  def angular
+    @angular_portfolio_items = Portfolio.angular
+  end
+
   def show
-    debugger
     @portfolio_item = Portfolio.find(params[:id])  
   end
 
