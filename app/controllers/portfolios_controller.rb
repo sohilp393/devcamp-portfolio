@@ -26,7 +26,8 @@ class PortfoliosController < ApplicationController
 
     respond_to do |format|
       if @portfolio_item.save
-        format.html { redirect_to @portfolio_item, notice: 'Blog was successfully created.' }
+        byebug
+        format.html { redirect_to portfolios_path, notice: 'Blog was successfully created.' }
       else
         format.html { render :new }
       end
