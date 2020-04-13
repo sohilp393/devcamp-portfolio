@@ -1,6 +1,10 @@
 class Portfolio < ApplicationRecord
   include Placeholder
   has_many :technologies
+  accepts_nested_attributes_for :technologies,
+                                 reject_if: lambda {|attr| attr['name'].blank?}
+  #Portfolio.create!(title:"Web app",subtitle:"asdcdzc",body:"scdcf",
+  #technologies_attributes:[{name: 'Ruby' },{name: 'Rails'},{name:'Icnoic'}])
 
   validates_presence_of :title , :body , :main_image , :thumb_image
 
