@@ -10,18 +10,13 @@
     <th>Main_image</th>
   </tr>
    
-   <% @portfolio_items.each do |portfolio_item| %>
-    <tr>
-      <td><%= link_to portfolio_item.title,portfolio_show_url(portfolio_item) %></td>
-      <td><%= portfolio_item.subtitle %></td>
-      <td><%= portfolio_item.body %></td>
-      <td><%= portfolio_item.main_image %></td>
-
-      <td><%= link_to 'Edit', edit_portfolio_url(portfolio_item) %></td>
-      <td><%= link_to 'Delete ',portfolio_path(portfolio_item),method: :delete , data: {confirm: 'Are you sure ?'} %></td>
-    </tr>
-  <% end %>
+  <tbody>
+      <%=render partial: 'portfolio_item',collection: @portfolio_items %>
+  </tbody>
 </table>
+
+
+
 
 
 
