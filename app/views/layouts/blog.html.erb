@@ -5,30 +5,20 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-
     <%= stylesheet_link_tag 'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>  
       
-      
-      <% if current_user %> 
-        <%= link_to "Logout",destroy_user_session_path ,method: :delete%>
-       <% else %>
-        <%= link_to "Register",new_user_registration_path %>
-        <%= link_to "Logout", new_user_session_path%>
-       <%end%>  
+    <%= login_helper %>  
 
     <%= yield %>
 
       <%= render "shared/nav" ,location: 'bottom'%>
     <%# http://localhost:3000/portfolio/9?q=twitter %>
-    <%if session[:source]%>
-    Thanks for visiting me from <%= session[:source] %>
-    <%end%>
+    <%= source_helper ("blog")%>
   </body>
 </html>

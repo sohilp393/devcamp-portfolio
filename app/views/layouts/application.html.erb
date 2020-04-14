@@ -15,17 +15,11 @@
        <p class="alert"><%= alert %></p>
 
       <%= render "shared/nav",location: 'top'%>
-       <% if current_user %> 
-        <%= link_to "Logout",destroy_user_session_path ,method: :delete%>
-       <% else %>
-        <%= link_to "Register",new_user_registration_path %>
-        <%= link_to "Logout", new_user_session_path%>
-       <%end%>  
+       
+      <%= login_helper %>   
 
     <%= yield %>
     <%# http://localhost:3000/portfolio/9?q=twitter %>
-    <%if session[:source]%>
-    Thanks for visiting me from <%= session[:source] %>
-    <%end%>
+    <%= source_helper ("application")%>
   </body>
 </html>
