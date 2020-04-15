@@ -18,12 +18,13 @@
       <div class="cover-container">
 
       <%= render "shared/application_nav"%>
-       
-      <%= login_helper %>   
+          
 
     <%= yield %>
     <%# http://localhost:3000/portfolio/9?q=twitter %>
-    <%= @copyright %>
+
+      <%= render "shared/application_footer"%>
+
     <%= source_helper ("application")%>
   </div>
   </div>
