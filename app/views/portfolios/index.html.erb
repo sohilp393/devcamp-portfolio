@@ -1,18 +1,8 @@
-<h1>Portfolios Items</h1>
-
-<%= link_to "Create new Item",new_portfolio_url%>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Subtitle</th>
-    <th>Body </th>
-    <th>Main_image</th>
-  </tr>
-   
-  <tbody>
-      <%=render partial: 'portfolio_item',collection: @portfolio_items %>
-  </tbody>
-</table>
-
-<%# image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? %>
+ 
+<div class="album text-muted">
+  <div class="container">
+    <div class="row">
+      <%= render partial: 'portfolio_item', collection: @portfolio_items %>
+    </div>
+  </div>
+</div>
