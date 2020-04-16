@@ -1,22 +1,35 @@
-<h1> Show </h1>
- 
-  <p>
-    <strong>Title:</strong>
-    <%= @portfolio_item.title %>
-  </p>
+<div class= "container">
+  <div class = "row">
+    <div class = "col-md-7">
+      <% image_tag @portfolio_item.main_image%>
+    </div>
+    
+    <div class = "col-md-5">
+    <p>
+      <strong>Title:</strong>
+      <%= @portfolio_item.title %>
+    </p>
    
-  <p>
-    <strong>Subtitile:</strong>
-    <%= @portfolio_item.subtitle %>
-  </p>
+    <p>
+      <strong>Subtitile:</strong>
+      <%= @portfolio_item.subtitle %>
+    </p>
 
-  <p>
-    <strong>Body:</strong>
-    <%= @portfolio_item.body %>
-  </p>
+    <p>
+      <strong>Body:</strong>
+      <%= @portfolio_item.body %>
+    </p>
 
-  <h2>Technologies Used:</h2>
+    <h2>Technologies Used:</h2>
 
-  <% @portfolio_item.technologies.each do |t| %>
-  <p><%= t.name %></p>
-  <%end%>
+    <% @portfolio_item.technologies.each do |t| %>
+    <p><%= t.name %></p>
+    <%end%>
+
+    <%= link_to "View all Portfolios Item",portfolios_path %>
+    </div>
+  </div>
+</div> 
+
+
+  
