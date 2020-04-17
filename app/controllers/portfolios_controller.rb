@@ -25,7 +25,6 @@ class PortfoliosController < ApplicationController
 
   def new
     @portfolio_item = Portfolio.new
-    4.times {@portfolio_item.technologies.build}
   end
 
   def edit
@@ -73,7 +72,7 @@ private
                                         :body,
                                         :main_image,
                                         :thumb_image,
-                                        technologies_attributes: [:name])
+                                        technologies_attributes: [:id,:name,:destroy])
   end
 
   def set_portfolio_item

@@ -21,4 +21,6 @@ require("packs/html.sortable")
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require jquery_ui
+//= require cocoon
+//= require gritter
 //= require_tree 
