@@ -58,3 +58,8 @@ gem 'dotenv-rails', '~> 2.7', '>= 2.7.5'
 gem 'carrierwave-aws', '~> 1.5'
 gem 'carrierwave', '~> 2.1'
 gem 'mini_magick', '~> 4.10', '>= 4.10.1'
+
+#Unobtrusive nested forms handling, using jQuery. Use this and discover cocoon-heaven.
+gem 'cocoon', '~> 1.2', '>= 1.2.14'
+#Integrate alerts that fade away.
+gem 'gritter', '~> 1.2'
