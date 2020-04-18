@@ -17,11 +17,21 @@
   </div>
 </div>
 
-<div class="navbar navbar-inverse bg-inverse">
+<!-- <div class="navbar navbar-inverse bg-inverse">
   <div class="container d-flex justify-content-between">
-    <a href="#" class="navbar-brand"> John Wick</a>
+    <%= current_user.name %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+  </div>
+</div> -->
+
+<div class="blog-masthead">
+  <div class="container">
+    <nav class="nav blog-nav">
+       <h3 class="masthead-brand"><%= current_user.name %></h3>
+         <%= nav_helper 'nav-link', 'span' %>
+      <%= login_helper 'nav-link' %>
+    </nav>
   </div>
 </div>

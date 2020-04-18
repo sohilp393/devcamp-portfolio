@@ -1,7 +1,8 @@
 <div class="blog-masthead">
   <div class="container">
     <nav class="nav blog-nav">
-      <%= nav_helper 'nav-link', 'span' %>
+       <h3 class="masthead-brand"><%= current_user.name %></h3>
+         <%= nav_helper 'nav-link', 'span' %>
       <%= login_helper 'nav-link' %>
     </nav>
   </div>
