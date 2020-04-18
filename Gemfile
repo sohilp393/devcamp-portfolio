@@ -65,3 +65,5 @@ gem 'cocoon', '~> 1.2', '>= 1.2.14'
 gem 'gritter', '~> 1.2'
 #Include the tweets from twitter
 gem 'twitter', '~> 7.0'
+#Action Cable
+gem 'redis', '~> 4.1', '>= 4.1.3'

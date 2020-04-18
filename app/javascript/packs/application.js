@@ -23,4 +23,5 @@ require("packs/html.sortable")
 //= require jquery_ui
 //= require cocoon
 //= require gritter
+//= require cable
 //= require_tree 
