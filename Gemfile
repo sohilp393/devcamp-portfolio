@@ -63,3 +63,5 @@ gem 'mini_magick', '~> 4.10', '>= 4.10.1'
 gem 'cocoon', '~> 1.2', '>= 1.2.14'
 #Integrate alerts that fade away.
 gem 'gritter', '~> 1.2'
+#Include the tweets from twitter
+gem 'twitter', '~> 7.0'
