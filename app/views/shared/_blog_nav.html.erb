@@ -1,7 +1,9 @@
 <div class="blog-masthead">
   <div class="container">
     <nav class="nav blog-nav">
-       <h3 class="masthead-brand"><%= current_user.name %></h3>
+       <h3 class="masthead-brand" style = " margin-top: 8px;">
+        <%= current_user.name %>    
+      </h3>
          <%= nav_helper 'nav-link', 'span' %>
       <%= login_helper 'nav-link' %>
     </nav>

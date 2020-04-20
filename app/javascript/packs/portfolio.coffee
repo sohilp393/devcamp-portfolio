@@ -1,6 +1,6 @@
 ready = undefined
 
-ready = ~>
+ready = ->
   $('.sortable').sortable()
   return
 

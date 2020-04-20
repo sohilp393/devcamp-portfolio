@@ -5,7 +5,7 @@ module ApplicationHelper
       #if current_user.role    
         (link_to "Register",new_user_registration_path, class: style)+
          "<br>".html_safe + 
-         (link_to "Login", new_user_session_path,class: style)
+         (link_to "Login", new_user_session_path,{:style=>'padding-left: 20px;', :class => style} )
     else
          link_to "Logout",destroy_user_session_path ,method: :delete,class: style
     end
@@ -59,13 +59,11 @@ module ApplicationHelper
     "active" if current_page? path
   end
 
-  def alerts
-    alert = (flash[:alert] || flash[:error]|| flash[:notice])
-
+  def alerts msg
+    alert = (flash[:alert] || flash[:error] || flash[:notice])
     if alert
       alert_generator alert      
     end
-
   end
 
   def alert_generator msg
