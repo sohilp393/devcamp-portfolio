@@ -64,5 +64,12 @@ footer p {
 /* Custom styles */
 
 .portfolio-container {
-  padding-top: 30px;  
+  padding-top: 30px;
+}
+
+.portfolio-masthead {
+  margin-bottom: 3rem;
+  background-color: black;
+  -webkit-box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+          box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
 }

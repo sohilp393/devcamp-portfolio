@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   before_action :set_copyright
 
   def set_copyright
-    @copyright = DevcampViewTool::Renderer.copyright 'Sohil' ,'All rights reserved'
+    @copyright = DevcampViewTool::Renderer.copyright 'Wick' ,'All rights reserved'
   end
 
 

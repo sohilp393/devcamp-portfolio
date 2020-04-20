@@ -1,6 +1,6 @@
 class Portfolio < ApplicationRecord
   include Placeholder
-  has_many :technologies
+  has_many :technologies , dependent: :delete_all
   accepts_nested_attributes_for :technologies,
                                 allow_destroy: true,
                                 reject_if: lambda {|attr| attr['name'].blank?}
@@ -21,5 +21,4 @@ class Portfolio < ApplicationRecord
   end
 
   scope :ruby_on_rails_ang , ->{where(subtitle: "Angular")} 
-  
 end

@@ -149,7 +149,7 @@ body {
   .masthead,
   .mastfoot,
   .cover-container {
-    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+    width: 65rem;
   }
 }
 
@@ -201,10 +201,27 @@ body {
   z-index: -100 ;
   -webkit-transform: translate(-50%) translateY(-50%);
   transform: translate(-50%) translateY(-50%);
-  background: image-url('wick3.jpeg') no-repeat ;
+  background: image-url('blog.jpg') no-repeat ;
   background-size: cover ;
 }
 
 .app-footer{
   color: white ;
+}
+
+.tech-news{
+  color:black;
+  margin: 20px ;
+}
+
+.tech-news a {
+  color:green;
+}
+
+.tech-news > .card{
+  padding: 30px;
+}
+
+.text-color{
+    color: black;
 }
