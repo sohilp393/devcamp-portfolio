@@ -1,10 +1,18 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy,:toggle_status]
   layout "blog"
-  access all: [:show,:index] ,user:{except: [:destroy,:new ,:create ,:update ,:edit,:toogle_status]},site_admin: :all
+  access all: [:show,:index,:new ,:create ,:update ,:edit,:destroy] ,user:{except: [:toogle_status]},site_admin: :all
 
   # GET /blogs
   # GET /blogs.json
+  def archives
+    if  params[:date].nil?
+       redirect_to blogs_url
+    else
+      @blogs = Blog.archives(params[:date])
+    end    
+  end
+
   def index
     @blogs = Blog.page(params[:page]).per(5)
   end
@@ -29,7 +37,7 @@ class BlogsController < ApplicationController
   # POST /blogs.json
   def create
     @blog = Blog.new(blog_params)
-    @blog.topic = Topic.last
+    @blog.topic = Topic.find(params[:topic_id])
     
     respond_to do |format|
       if @blog.save
@@ -45,6 +53,8 @@ class BlogsController < ApplicationController
   # PATCH/PUT /blogs/1
   # PATCH/PUT /blogs/1.json
   def update
+    debugger
+    @blog.topic = Topic.find(params[:topic_id]) 
     respond_to do |format|
       if @blog.update(blog_params)
         format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
@@ -83,6 +93,10 @@ class BlogsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def blog_params
-      params.require(:blog).permit(:title, :body)
+      params.require(:blog).permit(:title,:body)
+    end
+
+    def archives_params
+      params.require(:archives).permit(:date)
     end
 end
