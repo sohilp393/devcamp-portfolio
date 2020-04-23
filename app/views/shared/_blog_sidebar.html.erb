@@ -6,11 +6,14 @@
   <div class="sidebar-module">
     <h4>Archives</h4>
     <ol class="list-unstyled">
-      <li><a href="#">March 2014</a></li>
-      <li><a href="#">February 2014</a></li>
-      
+      <li><%=link_to prevmonth.strftime("%B"),{:controller => "blogs",:action => "archives",:date => prevmonth},:method=> :get%>
+      (<%= blogcountlastmonth %>) </li>
+      <li><%=link_to prevmonth.prev_month.strftime("%B"),{:controller => "blogs",:action => "archives",:date => prevmonth.prev_month},:method=> :get%> (<%= blogcountpenultimate%>) </li>
+      <!-- <li><a href="/archives"><%# Date.today.prev_month.strftime("%B")%> (<%# archivescount[0].count %>)</a></li>
+      <li><a href="/archives"><%# Date.today.prev_month.prev_month.strftime("%B")%> (<%# archivescount[1].count %>)</a></li> -->      
     </ol>
   </div>
+
   <div class="sidebar-module">
     <h4>Elsewhere</h4>
     <ol class="list-unstyled social-links">
