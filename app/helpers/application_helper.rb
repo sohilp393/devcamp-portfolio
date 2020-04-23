@@ -1,8 +1,6 @@
 module ApplicationHelper
   def login_helper(style = ' ') 
-    
     if current_user.is_a?(GuestUser)
-      #if current_user.role    
         (link_to "Register",new_user_registration_path, class: style)+
          "<br>".html_safe + 
          (link_to "Login", new_user_session_path,{:style=>'padding-left: 20px;', :class => style} )
@@ -68,5 +66,21 @@ module ApplicationHelper
 
   def alert_generator msg
     js add_gritter(msg, title:"Please pay attemtion!",sticky: false)
+  end
+
+  def blogcountlastmonth
+    Blog.bloglastmonth.count
+  end
+
+  def blogcountpenultimate
+    Blog.blogpenultimate.count
+  end
+
+  def prevmonth
+    Date.today.prev_month
+  end
+
+  def alltopic
+    @topics = Topic.findall    
   end
 end
