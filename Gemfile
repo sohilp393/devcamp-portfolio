@@ -52,11 +52,16 @@ gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
 gem 'petergate', '~> 2.0', '>= 2.0.1'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
+#used for pagination
 gem 'kaminari', '~> 1.2'
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
+#dotenv allows us to securely manage our credentials.
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.5'
+#Used for uploading images on aws
 gem 'carrierwave-aws', '~> 1.5'
+# Manages all action for image upload
 gem 'carrierwave', '~> 2.1'
+#It is require to use number of methods provided by aws
 gem 'mini_magick', '~> 4.10', '>= 4.10.1'
 
 #Unobtrusive nested forms handling, using jQuery. Use this and discover cocoon-heaven.
