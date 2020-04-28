@@ -6,9 +6,14 @@
   <div class="sidebar-module">
     <h4>Archives</h4>
     <ol class="list-unstyled">
-      <li><%=link_to prevmonth.strftime("%B"),{:controller => "blogs",:action => "archives",:date => prevmonth},:method=> :get%>
-      (<%= blogcountlastmonth %>) </li>
-      <li><%=link_to prevmonth.prev_month.strftime("%B"),{:controller => "blogs",:action => "archives",:date => prevmonth.prev_month},:method=> :get%> (<%= blogcountpenultimate%>) </li>
+
+      <% months.each do |m|%>
+        <li><%=link_to m.strftime("%B"),{:controller => "blogs",:action => "archives",:date => m},:method=> :get%>
+        (<%= blogscount(m) %>) </li>
+      <%end%>
+
+      <!-- <li><%#link_to prevmonth.strftime("%B"),{:controller => "blogs",:action => "archives",:date => prevmonth},:method=> :get%>
+      (<%# blogcountlastmonth %>) </li> -->
       <!-- <li><a href="/archives"><%# Date.today.prev_month.strftime("%B")%> (<%# archivescount[0].count %>)</a></li>
       <li><a href="/archives"><%# Date.today.prev_month.prev_month.strftime("%B")%> (<%# archivescount[1].count %>)</a></li> -->      
     </ol>
