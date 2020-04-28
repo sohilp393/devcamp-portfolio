@@ -68,19 +68,17 @@ module ApplicationHelper
     js add_gritter(msg, title:"Please pay attemtion!",sticky: false)
   end
 
-  def blogcountlastmonth
-    Blog.bloglastmonth.count
+  def blogscount date
+    Blog.blogscount(date)
   end
 
-  def blogcountpenultimate
-    Blog.blogpenultimate.count
-  end
-
-  def prevmonth
-    Date.today.prev_month
-  end
-
-  def alltopic
-    @topics = Topic.findall    
+  def months
+    x = 1 
+    monthsArr = []
+    for i in 1..(Time.now.month - 1)do
+      monthsArr << Date.today - x.month
+      x = x + 1
+    end
+      monthsArr
   end
 end
