@@ -1,7 +1,7 @@
 class PortfoliosController < ApplicationController
   layout 'portfolio' 
   before_action :set_portfolio_item,only: [:edit,:update,:show,:destroy ]
-  access all: [:show,:index,:angular] ,user:{except: [:destroy,:new ,:create ,:update ,:edit,:sort]},site_admin: :all
+  access all: [:show,:index,:angular,:new ,:create ,:update ,:edit],user:{except: [:destroy,:sort]},site_admin: :all
 
   def index
     @portfolio_items = Portfolio.by_position
@@ -11,7 +11,6 @@ class PortfoliosController < ApplicationController
     params[:order].each do |key,value|
       Portfolio.find(value[:id]).update(position: value[:position])
     end
-
     render nothing: true
   end
 
@@ -25,6 +24,7 @@ class PortfoliosController < ApplicationController
 
   def new
     @portfolio_item = Portfolio.new
+    #it will instantiate 2 technologies into current version of portfolio_item object
     2.times { @portfolio_item.technologies.build }
 
   end
@@ -60,7 +60,7 @@ class PortfoliosController < ApplicationController
       @portfolio_item = Portfolio.find(params[:id])
       @portfolio_item.destroy
       respond_to do |format|
-        format.html { redirect_to portfolios_url,notice: 'Record was desleted'}     
+        format.html { redirect_to portfolios_url,notice: 'Record was deleted'}     
       end
     end
 
