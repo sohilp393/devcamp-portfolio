@@ -20,5 +20,5 @@ class Portfolio < ApplicationRecord
     order("position ASC")
   end
 
-  scope :ruby_on_rails_ang , ->{where(subtitle: "Angular")} 
+  scope :ruby_on_rails_ang , -> {where(subtitle: "Angular")} 
 end
