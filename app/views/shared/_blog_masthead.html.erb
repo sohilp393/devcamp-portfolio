@@ -1,6 +1,10 @@
 <div class="blog-header">
     <div class="container">
       <h1 class="blog-title">My Blog</h1>
-      <%= link_to 'Write a New Blog', new_blog_path  %>
+      <% if current_user.is_a?(GuestUser) %>
+
+      <% else %>
+         <%= link_to 'Write a New Blog', new_blog_path  %>
+      <% end %>
     </div>
 </div>
