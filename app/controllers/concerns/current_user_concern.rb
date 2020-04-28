@@ -11,6 +11,7 @@ module CurrentUserConcern
     guest.first_name = "Guest"
     guest.last_name = "User"
     guest.email = "guest@exmaple.com"
+    guest.roles = "guest"
     guest
   end
 end
