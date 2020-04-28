@@ -37,7 +37,7 @@ class BlogsController < ApplicationController
   # POST /blogs.json
   def create
     @blog = Blog.new(blog_params)
-    @blog.topic = Topic.find(params[:topic_id])
+    @blog.topic = Topic.find(params[:blog][:topic_id])
     
     respond_to do |format|
       if @blog.save
@@ -54,7 +54,7 @@ class BlogsController < ApplicationController
   # PATCH/PUT /blogs/1.json
   def update
     debugger
-    @blog.topic = Topic.find(params[:topic_id]) 
+    @blog.topic = Topic.find(params[:blog][:topic_id]) 
     respond_to do |format|
       if @blog.update(blog_params)
         format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
@@ -88,12 +88,14 @@ class BlogsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
+      #params[:id] = my-blog-post-3
+      # Blog.where(slug:params[:id])
       @blog = Blog.friendly.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def blog_params
-      params.require(:blog).permit(:title,:body)
+      params.require(:blog).permit(:title,:body,:topic_id)
     end
 
     def archives_params
